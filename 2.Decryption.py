@@ -1,0 +1,37 @@
+ct = str(input("Enter the Ciphertext: ").upper())
+key= input("Enter the key: ")
+pt = ""
+if key.isdigit():
+  
+    key = int(key)
+    if key > 26:
+        key = key % 26
+
+    for i in range(len(ct)):
+
+        ci = ord(ct[i]) - 64
+        pi = ci - key + 26
+    
+        pi = pi % 26
+
+        pt += chr(pi+64)
+  
+    print(f"The Plaintext: {pt}")
+
+elif key.isalpha():
+
+    key = key.upper()
+
+    for i in range(len(ct)):
+
+        ki = ord(key[i%len(key)]) - 64
+        ci = ord(ct[i]) - 64
+        pi = ci - ki + 26
+        pi = pi % 26
+
+        pt += chr(pi+64)
+  
+    print(f"The Plaintext: {pt}")
+
+else:
+    print("Invalid key")
