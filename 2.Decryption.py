@@ -10,9 +10,12 @@ if key.isdigit():
     for i in range(len(ct)):
 
         ci = ord(ct[i]) - 64
-        pi = ci - key + 26
-    
-        pi = pi % 26
+        pi = ci - key
+        
+        if pi >26:
+            pi = pi % 26
+        elif pi <= 0:
+            pi += 26
 
         pt += chr(pi+64)
   
@@ -26,8 +29,12 @@ elif key.isalpha():
 
         ki = ord(key[i%len(key)]) - 64
         ci = ord(ct[i]) - 64
-        pi = ci - ki + 26
-        pi = pi % 26
+        pi = ci - ki
+
+        if pi >26:
+            pi = pi % 26
+        elif pi <= 0:
+            pi += 26
 
         pt += chr(pi+64)
   
