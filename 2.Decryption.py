@@ -1,4 +1,4 @@
-ct = str(input("Enter the Ciphertext: ").upper())
+ct = str(input("Enter the Ciphertext: ").upper()).replace(" ", "")
 key= input("Enter the key: ")
 pt = ""
 if key.isdigit():

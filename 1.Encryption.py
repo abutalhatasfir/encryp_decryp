@@ -1,4 +1,4 @@
-pt = str(input("Enter the Plaintext: ").upper().split())
+pt = str(input("Enter the Plaintext: ").upper()).replace(" ", "")
 key= input("Enter the key: ")
 ct = ""
 if key.isdigit():

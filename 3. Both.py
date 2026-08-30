@@ -4,7 +4,7 @@ op = input("Enter your choice: ").upper()
 
 if op == "A":
 
-    pt = str(input("Enter the Plaintext: ").upper().split())
+    pt = str(input("Enter the Plaintext: ").upper()).replace(" ", "")
     key= input("Enter the key: ")
     ct = ""
     if key.isdigit():
@@ -51,7 +51,7 @@ if op == "A":
 
 elif op == "B":
 
-    ct = str(input("Enter the Ciphertext: ").upper())
+    ct = str(input("Enter the Ciphertext: ").upper()).replace(" ", "")
     key= input("Enter the key: ")
     pt = ""
     if key.isdigit():
